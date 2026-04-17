@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gezgin-Z</title>
   <meta name="description" content="Gezgin-Z resmi web sitesi. Şarkılar, videolar, kısa videolar ve sosyal medya bağlantıları." />
+
   <style>
     :root{
       --bg:#050505;
@@ -15,6 +16,7 @@
       --accent-2:#5eead4;
       --max:1200px;
     }
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
@@ -24,11 +26,17 @@
       color:var(--text);
       line-height:1.5;
     }
-    a{color:inherit;text-decoration:none}
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
     .container{
       width:min(var(--max), calc(100% - 32px));
       margin:0 auto;
     }
+
     .site-header{
       position:sticky;
       top:0;
@@ -37,6 +45,7 @@
       background:rgba(5,5,5,0.82);
       border-bottom:1px solid rgba(255,255,255,0.06);
     }
+
     .nav{
       min-height:72px;
       display:flex;
@@ -45,6 +54,7 @@
       gap:20px;
       flex-wrap:wrap;
     }
+
     .brand{
       font-size:30px;
       font-weight:900;
@@ -52,25 +62,35 @@
       white-space:nowrap;
       padding:18px 0;
     }
-    .brand span{color:var(--accent-2)}
+
+    .brand span{
+      color:var(--accent-2);
+    }
+
     .nav-links{
       display:flex;
       align-items:center;
       gap:20px;
       flex-wrap:wrap;
     }
+
     .nav-links a{
       color:var(--muted);
       font-size:15px;
       font-weight:700;
     }
-    .nav-links a:hover{color:var(--text)}
+
+    .nav-links a:hover{
+      color:var(--text);
+    }
+
     .nav-social{
       display:flex;
       align-items:center;
       gap:10px;
       flex-wrap:wrap;
     }
+
     .nav-social a{
       padding:10px 14px;
       border:1px solid rgba(255,255,255,0.1);
@@ -78,20 +98,27 @@
       font-size:13px;
       background:rgba(255,255,255,0.03);
     }
+
+    .nav-social a:hover{
+      border-color:rgba(255,255,255,0.24);
+    }
+
     .hero{
       border-bottom:1px solid var(--line);
       background:
         radial-gradient(circle at top left, rgba(94,234,212,0.14), transparent 35%),
         linear-gradient(180deg, #0c0d10 0%, #050505 100%);
     }
+
     .hero-grid{
       display:grid;
-      grid-template-columns:1.05fr .95fr;
-      gap:36px;
+      grid-template-columns:minmax(0,1.1fr) minmax(320px,0.9fr);
+      gap:48px;
       align-items:center;
       min-height:calc(100vh - 72px);
       padding:56px 0 72px;
     }
+
     .eyebrow{
       display:inline-block;
       padding:8px 14px;
@@ -105,24 +132,29 @@
       text-transform:uppercase;
       margin-bottom:18px;
     }
-    .hero {
+
+    .hero h1{
       margin:0;
-      font-size:clamp(44px, 8vw, 90px);
+      font-size:clamp(56px, 8vw, 120px);
       line-height:.95;
       letter-spacing:-0.05em;
+      max-width:900px;
     }
+
     .hero p{
       margin:22px 0 0;
       max-width:720px;
       font-size:18px;
       color:var(--muted);
     }
+
     .hero-actions{
       display:flex;
       flex-wrap:wrap;
       gap:14px;
       margin-top:28px;
     }
+
     .btn{
       display:inline-flex;
       align-items:center;
@@ -133,22 +165,35 @@
       font-size:15px;
       font-weight:800;
       border:1px solid transparent;
+      transition:.2s ease;
     }
+
     .btn-primary{
       background:#fff;
       color:#000;
     }
+
+    .btn-primary:hover{
+      transform:translateY(-1px);
+    }
+
     .btn-secondary{
       border-color:rgba(255,255,255,0.12);
       background:rgba(255,255,255,0.03);
       color:#fff;
     }
+
+    .btn-secondary:hover{
+      border-color:rgba(255,255,255,0.24);
+    }
+
     .hero-panel{
       background:rgba(255,255,255,0.03);
       border:1px solid rgba(255,255,255,0.08);
       border-radius:28px;
       overflow:hidden;
     }
+
     .hero-panel iframe,
     .video-card iframe{
       width:100%;
@@ -157,7 +202,11 @@
       display:block;
       background:#000;
     }
-    .hero-panel-content{padding:18px 18px 20px}
+
+    .hero-panel-content{
+      padding:18px 18px 20px;
+    }
+
     .hero-panel-title{
       font-size:14px;
       color:var(--muted);
@@ -166,16 +215,23 @@
       letter-spacing:.12em;
       font-weight:800;
     }
-    .hero-panel-content h3{margin:0;font-size:24px}
+
+    .hero-panel-content h3{
+      margin:0;
+      font-size:24px;
+    }
+
     .hero-panel-content p{
       margin:10px 0 0;
       font-size:15px;
       color:var(--muted);
     }
+
     section{
       padding:88px 0;
       border-bottom:1px solid var(--line);
     }
+
     .section-label{
       color:var(--accent-2);
       font-size:12px;
@@ -184,18 +240,21 @@
       font-weight:800;
       margin-bottom:8px;
     }
+
     .section-title{
       margin:0;
       font-size:clamp(28px, 4vw, 46px);
       line-height:1.05;
       letter-spacing:-0.03em;
     }
+
     .section-sub{
       margin:10px 0 28px;
       color:var(--muted);
       max-width:760px;
       font-size:17px;
     }
+
     .about-grid,
     .songs-grid,
     .video-grid,
@@ -203,10 +262,23 @@
       display:grid;
       gap:20px;
     }
-    .about-grid{grid-template-columns:1fr 1fr}
-    .songs-grid{grid-template-columns:repeat(2, minmax(0,1fr))}
-    .video-grid{grid-template-columns:repeat(2, minmax(0,1fr))}
-    .social-grid{grid-template-columns:repeat(4, minmax(0,1fr))}
+
+    .about-grid{
+      grid-template-columns:1fr 1fr;
+    }
+
+    .songs-grid{
+      grid-template-columns:repeat(2, minmax(0,1fr));
+    }
+
+    .video-grid{
+      grid-template-columns:repeat(2, minmax(0,1fr));
+    }
+
+    .social-grid{
+      grid-template-columns:repeat(4, minmax(0,1fr));
+    }
+
     .card,
     .song-card,
     .video-card,
@@ -217,9 +289,21 @@
       border-radius:24px;
       overflow:hidden;
     }
-    .card{padding:24px}
-    .card h3{margin:0 0 12px;font-size:22px}
-    .card p{margin:0;color:var(--muted)}
+
+    .card{
+      padding:24px;
+    }
+
+    .card h3{
+      margin:0 0 12px;
+      font-size:22px;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+    }
+
     .song-cover{
       aspect-ratio:16/9;
       background:
@@ -230,31 +314,37 @@
       padding:20px;
       border-bottom:1px solid var(--line);
     }
+
     .song-cover span{
       font-size:34px;
       font-weight:900;
       letter-spacing:-0.04em;
     }
+
     .song-body,
     .video-card-content{
       padding:20px;
     }
+
     .song-body h3,
     .video-card-content h3{
       margin:0;
       font-size:24px;
     }
+
     .song-body p,
     .video-card-content p{
       margin:10px 0 18px;
       color:var(--muted);
       font-size:15px;
     }
+
     .song-actions{
       display:flex;
       flex-wrap:wrap;
       gap:10px;
     }
+
     .pill{
       display:inline-flex;
       align-items:center;
@@ -267,12 +357,18 @@
       font-size:14px;
       font-weight:700;
     }
+
+    .pill:hover{
+      border-color:rgba(255,255,255,0.24);
+    }
+
     .shorts-grid{
       display:grid;
       grid-template-columns:repeat(3, minmax(0,1fr));
       gap:18px;
       margin-top:22px;
     }
+
     .short-card iframe{
       width:100%;
       aspect-ratio:9/16;
@@ -280,15 +376,24 @@
       display:block;
       background:#000;
     }
+
     .short-card .meta{
       padding:14px 14px 16px;
       font-size:14px;
       font-weight:700;
     }
+
     .social-link{
       display:block;
       padding:24px;
+      transition:.2s ease;
     }
+
+    .social-link:hover{
+      transform:translateY(-2px);
+      border-color:rgba(255,255,255,0.16);
+    }
+
     .social-link small{
       display:block;
       color:var(--muted);
@@ -298,21 +403,25 @@
       font-size:11px;
       font-weight:800;
     }
+
     .social-link strong{
       font-size:22px;
       letter-spacing:-0.03em;
     }
+
     footer{
       padding:28px 0 48px;
       color:var(--muted);
       font-size:14px;
     }
+
     .footer-wrap{
       display:flex;
       justify-content:space-between;
       gap:16px;
       flex-wrap:wrap;
     }
+
     @media (max-width: 1024px){
       .hero-grid,
       .about-grid,
@@ -321,21 +430,38 @@
       .social-grid{
         grid-template-columns:1fr;
       }
-      .shorts-grid{grid-template-columns:repeat(2, minmax(0,1fr))}
+
+      .shorts-grid{
+        grid-template-columns:repeat(2, minmax(0,1fr));
+      }
     }
+
     @media (max-width: 640px){
-      .container{width:min(var(--max), calc(100% - 20px))}
-      .brand{font-size:26px}
+      .container{
+        width:min(var(--max), calc(100% - 20px));
+      }
+
+      .brand{
+        font-size:26px;
+      }
+
       .hero-grid{
         min-height:auto;
         padding:36px 0 56px;
       }
-      .shorts-grid{grid-template-columns:1fr}
-      section{padding:64px 0}
+
+      .shorts-grid{
+        grid-template-columns:1fr;
+      }
+
+      section{
+        padding:64px 0;
+      }
     }
   </style>
 </head>
 <body>
+
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="#top">Gezgin-<span>Z</span></a>
@@ -348,8 +474,8 @@
       </nav>
 
       <div class="nav-social">
-        <a href="https://www.instagram.com/gezginzofficial/" target="_blank">Instagram</a>
-        <a href="https://www.tiktok.com/@gezgin_z" target="_blank">TikTok</a>
+        <a href="https://www.instagram.com/gezginzofficial/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.tiktok.com/@gezgin_z" target="_blank" rel="noopener noreferrer">TikTok</a>
       </div>
     </div>
   </header>
@@ -357,16 +483,21 @@
   <main id="top">
     <section class="hero">
       <div class="container hero-grid">
+
         <div>
           <div class="eyebrow">Official Website</div>
-         <h1>Akışın İçindesin.</h1>
-<p style="margin-top:12px; font-size:18px; color:var(--muted); letter-spacing:1px;">
-  Gezgin-Z
-</p>
-          <p>
-           Gece, asfalt ve neon arasında sıkışmış bir zihin
+
+          <h1>Akışın İçindesin.</h1>
+
+          <p style="margin-top:16px; font-size:20px; color:var(--muted); letter-spacing:1px;">
+            Gezgin-Z
+          </p>
+
+          <p style="max-width:700px;">
+            Gece, asfalt ve neon arasında sıkışmış bir zihin.
             Ritim sadece müzik değil — bir akışın içindesin.
           </p>
+
           <div class="hero-actions">
             <a class="btn btn-primary" href="#sarkilar">Şarkıları Dinle</a>
             <a class="btn btn-secondary" href="#videolar">Videoları İzle</a>
@@ -378,13 +509,16 @@
             src="https://www.youtube.com/embed/RZjU0MV99co?rel=0"
             title="Gezgin-Z - AKIŞ"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
+            allowfullscreen>
+          </iframe>
+
           <div class="hero-panel-content">
             <div class="hero-panel-title">Öne Çıkan Yayın</div>
             <h3>AKIŞ</h3>
             <p>Gezgin-Z dünyasına giriş için en doğru başlangıç noktası.</p>
           </div>
         </div>
+
       </div>
     </section>
 
@@ -403,6 +537,7 @@
               Gece, asfalt, neon, iç gerilim ve sert ritim. Görsel dünyası da müziği kadar karanlık ve şehirli.
             </p>
           </div>
+
           <div class="card">
             <h3>Yaklaşım</h3>
             <p>
@@ -426,8 +561,8 @@
               <h3>AKIŞ</h3>
               <p>Zaman, baskı ve iç ses arasında ilerleyen karanlık ve akışkan yapı.</p>
               <div class="song-actions">
-                <a class="pill" href="https://www.youtube.com/watch?v=RZjU0MV99co" target="_blank">YouTube</a>
-                <a class="pill" href="https://open.spotify.com/intl-tr/artist/2RlqsQaM5siGErX7fi7MaZ" target="_blank">Spotify</a>
+                <a class="pill" href="https://www.youtube.com/watch?v=RZjU0MV99co" target="_blank" rel="noopener noreferrer">YouTube</a>
+                <a class="pill" href="https://open.spotify.com/intl-tr/artist/2RlqsQaM5siGErX7fi7MaZ" target="_blank" rel="noopener noreferrer">Spotify</a>
               </div>
             </div>
           </article>
@@ -438,8 +573,8 @@
               <h3>NORMAL</h3>
               <p>Düzenin içindeki sıkışmışlık ve çatlaklar.</p>
               <div class="song-actions">
-                <a class="pill" href="https://www.youtube.com/watch?v=jwVmYoBIO74" target="_blank">YouTube</a>
-                <a class="pill" href="https://open.spotify.com/intl-tr/artist/2RlqsQaM5siGErX7fi7MaZ" target="_blank">Spotify</a>
+                <a class="pill" href="https://www.youtube.com/watch?v=jwVmYoBIO74" target="_blank" rel="noopener noreferrer">YouTube</a>
+                <a class="pill" href="https://open.spotify.com/intl-tr/artist/2RlqsQaM5siGErX7fi7MaZ" target="_blank" rel="noopener noreferrer">Spotify</a>
               </div>
             </div>
           </article>
@@ -450,8 +585,8 @@
               <h3>SEMPTON</h3>
               <p>Gerilim, tempo ve sert duruş.</p>
               <div class="song-actions">
-                <a class="pill" href="https://www.youtube.com/watch?v=lQsL9lHYa3c" target="_blank">YouTube</a>
-                <a class="pill" href="https://open.spotify.com/intl-tr/artist/2RlqsQaM5siGErX7fi7MaZ" target="_blank">Spotify</a>
+                <a class="pill" href="https://www.youtube.com/watch?v=lQsL9lHYa3c" target="_blank" rel="noopener noreferrer">YouTube</a>
+                <a class="pill" href="https://open.spotify.com/intl-tr/artist/2RlqsQaM5siGErX7fi7MaZ" target="_blank" rel="noopener noreferrer">Spotify</a>
               </div>
             </div>
           </article>
@@ -462,8 +597,8 @@
               <h3>GECEYE KARŞI</h3>
               <p>Geceyle yüzleşen sert bir anlatım.</p>
               <div class="song-actions">
-                <a class="pill" href="https://www.youtube.com/watch?v=EYBmwjaqfFg" target="_blank">YouTube</a>
-                <a class="pill" href="https://open.spotify.com/intl-tr/artist/2RlqsQaM5siGErX7fi7MaZ" target="_blank">Spotify</a>
+                <a class="pill" href="https://www.youtube.com/watch?v=EYBmwjaqfFg" target="_blank" rel="noopener noreferrer">YouTube</a>
+                <a class="pill" href="https://open.spotify.com/intl-tr/artist/2RlqsQaM5siGErX7fi7MaZ" target="_blank" rel="noopener noreferrer">Spotify</a>
               </div>
             </div>
           </article>
@@ -474,8 +609,8 @@
               <h3>DİP</h3>
               <p>Ağırlığın ve aşağıdan bakan bakışın sesi.</p>
               <div class="song-actions">
-                <a class="pill" href="https://www.youtube.com/watch?v=-6Fp3pOZzfI" target="_blank">YouTube</a>
-                <a class="pill" href="https://open.spotify.com/intl-tr/artist/2RlqsQaM5siGErX7fi7MaZ" target="_blank">Spotify</a>
+                <a class="pill" href="https://www.youtube.com/watch?v=-6Fp3pOZzfI" target="_blank" rel="noopener noreferrer">YouTube</a>
+                <a class="pill" href="https://open.spotify.com/intl-tr/artist/2RlqsQaM5siGErX7fi7MaZ" target="_blank" rel="noopener noreferrer">Spotify</a>
               </div>
             </div>
           </article>
@@ -515,22 +650,27 @@
             <iframe src="https://www.youtube.com/embed/31yDaiU3ysI" title="AKIŞ Short 1" allowfullscreen></iframe>
             <div class="meta">AKIŞ / Short 1</div>
           </article>
+
           <article class="short-card">
             <iframe src="https://www.youtube.com/embed/0oRbInKwddk" title="AKIŞ Short 2" allowfullscreen></iframe>
             <div class="meta">AKIŞ / Short 2</div>
           </article>
+
           <article class="short-card">
             <iframe src="https://www.youtube.com/embed/VWoh0klykaY" title="AKIŞ Short 3" allowfullscreen></iframe>
             <div class="meta">AKIŞ / Short 3</div>
           </article>
+
           <article class="short-card">
             <iframe src="https://www.youtube.com/embed/3dG3-hhGFr8" title="GECEYE KARŞI Short 1" allowfullscreen></iframe>
             <div class="meta">GECEYE KARŞI / Short 1</div>
           </article>
+
           <article class="short-card">
             <iframe src="https://www.youtube.com/embed/VFR2FPY2SrE" title="GECEYE KARŞI Short 2" allowfullscreen></iframe>
             <div class="meta">GECEYE KARŞI / Short 2</div>
           </article>
+
           <article class="short-card">
             <iframe src="https://www.youtube.com/embed/34g9_hmNTXA" title="DİP Short 1" allowfullscreen></iframe>
             <div class="meta">DİP / Short 1</div>
@@ -546,19 +686,22 @@
         <p class="section-sub">Takip ve dinleme bağlantıları.</p>
 
         <div class="social-grid">
-          <a class="social-link" href="https://www.youtube.com/" target="_blank">
+          <a class="social-link" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
             <small>Video</small>
             <strong>YouTube</strong>
           </a>
-          <a class="social-link" href="https://open.spotify.com/intl-tr/artist/2RlqsQaM5siGErX7fi7MaZ" target="_blank">
+
+          <a class="social-link" href="https://open.spotify.com/intl-tr/artist/2RlqsQaM5siGErX7fi7MaZ" target="_blank" rel="noopener noreferrer">
             <small>Müzik</small>
             <strong>Spotify</strong>
           </a>
-          <a class="social-link" href="https://www.instagram.com/gezginzofficial/" target="_blank">
+
+          <a class="social-link" href="https://www.instagram.com/gezginzofficial/" target="_blank" rel="noopener noreferrer">
             <small>Görsel</small>
             <strong>Instagram</strong>
           </a>
-          <a class="social-link" href="https://www.tiktok.com/@gezgin_z" target="_blank">
+
+          <a class="social-link" href="https://www.tiktok.com/@gezgin_z" target="_blank" rel="noopener noreferrer">
             <small>Kısa Video</small>
             <strong>TikTok</strong>
           </a>
@@ -573,5 +716,6 @@
       <div>Resmi web sitesi</div>
     </div>
   </footer>
+
 </body>
 </html>
